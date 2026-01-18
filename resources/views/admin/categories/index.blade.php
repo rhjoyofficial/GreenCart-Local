@@ -9,7 +9,7 @@
         <div class="flex justify-between items-center">
             <h2 class="text-lg font-semibold text-gray-800">All Categories</h2>
             <a href="{{ route('admin.categories.create') }}"
-                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center space-x-2">
+                class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center space-x-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                 </svg>
@@ -43,7 +43,7 @@
                                 </td>
                                 <td class="px-6 py-4 text-sm text-gray-500">{{ $category->slug }}</td>
                                 <td class="px-6 py-4">
-                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                                    <span class="px-2 py-1 bg-green-100 text-blue-800 rounded-full text-xs font-medium">
                                         {{ $category->products_count }}
                                     </span>
                                 </td>
@@ -53,7 +53,7 @@
                                 <td class="px-6 py-4 text-sm font-medium">
                                     <div class="flex space-x-3">
                                         <a href="{{ route('admin.categories.edit', $category) }}"
-                                            class="text-blue-600 hover:text-blue-700">Edit</a>
+                                            class="text-green-600 hover:text-green-700">Edit</a>
                                         <form action="{{ route('admin.categories.destroy', $category) }}" method="POST"
                                             class="inline" onsubmit="return confirm('Are you sure?')">
                                             @csrf

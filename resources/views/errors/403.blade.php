@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Access Denied - Marketplace')
+@section('title', 'Access Denied - GreenCart-Local')
 
 @section('content')
     <div class="min-h-[70vh] flex items-center justify-center">
@@ -32,7 +32,7 @@
                 @auth
                     @if (auth()->user()->hasRole('admin'))
                         <a href="{{ route('admin.dashboard') }}"
-                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
                             Go to Admin Dashboard
                         </a>
                     @elseif(auth()->user()->hasRole('seller'))
@@ -42,17 +42,17 @@
                         </a>
                     @else
                         <a href="{{ route('customer.dashboard') }}"
-                            class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
                             Go to My Account
                         </a>
                     @endif
                 @else
                     <a href="{{ route('login') }}"
-                        class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                        class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
                         Log In
                     </a>
                     <a href="{{ route('register') }}"
-                        class="bg-white border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium">
+                        class="bg-white border border-green-600 text-green-600 px-6 py-3 rounded-lg hover:bg-green-50 transition-colors font-medium">
                         Sign Up
                     </a>
                 @endauth

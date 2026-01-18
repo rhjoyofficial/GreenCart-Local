@@ -1,48 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', $product->name . ' - Marketplace')
+@section('title', $product->name . ' - GreenCart-Local')
 
-@push('scripts')
-    <script>
-        // Image gallery functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mainImage = document.getElementById('main-image');
-            const thumbnails = document.querySelectorAll('.thumbnail');
-
-            thumbnails.forEach(thumb => {
-                thumb.addEventListener('click', function() {
-                    // Update main image
-                    mainImage.src = this.dataset.image;
-                    mainImage.alt = this.alt;
-
-                    // Update active thumbnail
-                    thumbnails.forEach(t => t.classList.remove('border-blue-500', 'border-2'));
-                    this.classList.add('border-blue-500', 'border-2');
-                });
-            });
-
-            // Quantity controls
-            const quantityInput = document.getElementById('quantity');
-            const decrementBtn = document.getElementById('decrement-quantity');
-            const incrementBtn = document.getElementById('increment-quantity');
-
-            decrementBtn?.addEventListener('click', function() {
-                let current = parseInt(quantityInput.value);
-                if (current > 1) {
-                    quantityInput.value = current - 1;
-                }
-            });
-
-            incrementBtn?.addEventListener('click', function() {
-                let current = parseInt(quantityInput.value);
-                const max = parseInt(quantityInput.max);
-                if (current < max) {
-                    quantityInput.value = current + 1;
-                }
-            });
-        });
-    </script>
-@endpush
 
 @section('content')
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -71,7 +30,7 @@
 
                     <!-- Thumbnails -->
                     <div class="grid grid-cols-4 gap-2">
-                        <div class="thumbnail border-2 border-blue-500 rounded-lg overflow-hidden cursor-pointer">
+                        <div class="thumbnail border-2 border-green-500 rounded-lg overflow-hidden cursor-pointer">
                             <img src="{{ $product->image ? asset('storage/' . $product->image) : 'https://via.placeholder.com/150' }}"
                                 alt="{{ $product->name }} - 1"
                                 data-image="{{ $product->image ? asset('storage/' . $product->image) : 'https://via.placeholder.com/600' }}"
@@ -104,13 +63,21 @@
 
                         <!-- Wishlist Button -->
                         @auth
+                            @php
+                                $isInWishlist =
+                                    auth()
+                                        ->user()
+                                        ->defaultWishlist?->products()
+                                        ->where('product_id', $product->id)
+                                        ->exists() ?? false;
+                            @endphp
                             <form action="{{ route('wishlist.toggle', $product) }}" method="POST" class="add-to-wishlist-form">
                                 @csrf
                                 <button type="submit"
                                     class="p-2 rounded-full border border-gray-300 hover:border-red-300 hover:bg-red-50 transition-colors">
-                                    <svg class="w-6 h-6 {{ auth()->user()->defaultWishlist?->products()->where('product_id', $product->id)->exists() ? 'text-red-500 fill-red-500' : 'text-gray-500' }}"
-                                        fill="{{ auth()->user()->defaultWishlist?->products()->where('product_id', $product->id)->exists() ? 'currentColor' : 'none' }}"
-                                        stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 {{ $isInWishlist ? 'text-red-500 fill-red-500' : 'text-gray-500' }}"
+                                        fill="{{ $isInWishlist ? 'currentColor' : 'none' }}" stroke="currentColor"
+                                        viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                         </path>
@@ -123,8 +90,9 @@
                     <!-- Seller Info -->
                     <div class="mb-6 p-4 bg-gray-50 rounded-lg">
                         <div class="flex items-center">
-                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
@@ -196,7 +164,7 @@
                                 @csrf
                                 <input type="hidden" name="quantity" id="cart-quantity" value="1">
                                 <button type="submit"
-                                    class="w-full add-to-cart-btn bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium flex items-center justify-center"
+                                    class="w-full add-to-cart-btn bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium flex items-center justify-center"
                                     {{ $product->stock_quantity <= 0 ? 'disabled' : '' }}>
                                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -273,12 +241,12 @@
                 <div class="lg:col-span-2">
                     <!-- Add Review Button -->
                     @auth
-                        <button class="mb-6 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <button class="mb-6 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Write a Review
                         </button>
                     @else
                         <a href="{{ route('login') }}"
-                            class="inline-block mb-6 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            class="inline-block mb-6 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Login to Review
                         </a>
                     @endauth
@@ -320,3 +288,44 @@
         });
     </script>
 @endsection
+@push('scripts')
+    <script>
+        // Image gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.getElementById('main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Update main image
+                    mainImage.src = this.dataset.image;
+                    mainImage.alt = this.alt;
+
+                    // Update active thumbnail
+                    thumbnails.forEach(t => t.classList.remove('border-green-500', 'border-2'));
+                    this.classList.add('border-green-500', 'border-2');
+                });
+            });
+
+            // Quantity controls
+            const quantityInput = document.getElementById('quantity');
+            const decrementBtn = document.getElementById('decrement-quantity');
+            const incrementBtn = document.getElementById('increment-quantity');
+
+            decrementBtn?.addEventListener('click', function() {
+                let current = parseInt(quantityInput.value);
+                if (current > 1) {
+                    quantityInput.value = current - 1;
+                }
+            });
+
+            incrementBtn?.addEventListener('click', function() {
+                let current = parseInt(quantityInput.value);
+                const max = parseInt(quantityInput.max);
+                if (current < max) {
+                    quantityInput.value = current + 1;
+                }
+            });
+        });
+    </script>
+@endpush

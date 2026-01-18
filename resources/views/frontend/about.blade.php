@@ -1,12 +1,12 @@
 @extends('layouts.frontend')
 
-@section('title', 'About Us - Marketplace')
+@section('title', 'About Us - GreenCart-Local')
 
 @section('content')
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Hero Section -->
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">About Our Marketplace</h1>
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">About Our GreenCart-Local</h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                 Connecting buyers with trusted sellers worldwide since {{ date('Y') - 2 }}.
             </p>
@@ -15,8 +15,8 @@
         <!-- Mission & Vision -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div>
-                <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
                         </path>
@@ -55,23 +55,23 @@
         </div>
 
         <!-- Stats -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-16">
+        <div class="bg-gradient-to-r from-green-600 to-purple-600 rounded-2xl p-8 mb-16">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                     <div class="text-3xl font-bold text-white mb-2">10,000+</div>
-                    <div class="text-blue-100">Active Sellers</div>
+                    <div class="text-green-100">Active Sellers</div>
                 </div>
                 <div>
                     <div class="text-3xl font-bold text-white mb-2">500,000+</div>
-                    <div class="text-blue-100">Happy Customers</div>
+                    <div class="text-green-100">Happy Customers</div>
                 </div>
                 <div>
                     <div class="text-3xl font-bold text-white mb-2">1M+</div>
-                    <div class="text-blue-100">Products Listed</div>
+                    <div class="text-green-100">Products Listed</div>
                 </div>
                 <div>
                     <div class="text-3xl font-bold text-white mb-2">50+</div>
-                    <div class="text-blue-100">Countries Served</div>
+                    <div class="text-green-100">Countries Served</div>
                 </div>
             </div>
         </div>
@@ -118,19 +118,19 @@
         </div>
 
         <!-- CTA -->
-        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Join Our Marketplace</h2>
+        <div class="bg-gradient-to-r from-green-50 to-purple-50 rounded-2xl p-8 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Join Our GreenCart-Local</h2>
             <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
                 Whether you're looking to start selling your products or find unique items from trusted sellers,
                 our platform has everything you need.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ route('register') }}"
-                    class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
                     Start Selling
                 </a>
                 <a href="{{ route('products.index') }}"
-                    class="bg-white border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                    class="bg-white border border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors">
                     Start Shopping
                 </a>
             </div>

@@ -38,8 +38,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $validated = $request->validate([
             'name' => 'required|string|max:150',
+            'sku' => 'nullable|string|max:100',
             'category_id' => 'required|exists:categories,id',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
@@ -47,19 +49,18 @@ class ProductController extends Controller
             'sku' => 'nullable|string|max:100',
             'image' => 'nullable|image|max:2048',
             'is_active' => 'boolean',
-            'is_featured' => 'boolean'
         ]);
 
         $product = new Product();
         $product->seller_id = Auth::id();
         $product->name = $validated['name'];
+        $product->sku = $validated['sku'];
         $product->slug = Str::slug($validated['name']) . '-' . uniqid();
         $product->category_id = $validated['category_id'];
         $product->description = $validated['description'];
         $product->price = $validated['price'];
         $product->stock_quantity = $validated['stock_quantity'];
         $product->is_active = $request->has('is_active');
-        $product->is_featured = $request->has('is_featured');
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('products', 'public');
@@ -104,6 +105,7 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:150',
+            'sku' => 'nullable|string|max:100',
             'category_id' => 'required|exists:categories,id',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
@@ -111,16 +113,15 @@ class ProductController extends Controller
             'sku' => 'nullable|string|max:100',
             'image' => 'nullable|image|max:2048',
             'is_active' => 'boolean',
-            'is_featured' => 'boolean'
         ]);
 
         $product->name = $validated['name'];
+        $product->sku = $validated['sku'];
         $product->category_id = $validated['category_id'];
         $product->description = $validated['description'];
         $product->price = $validated['price'];
         $product->stock_quantity = $validated['stock_quantity'];
         $product->is_active = $request->has('is_active');
-        $product->is_featured = $request->has('is_featured');
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('products', 'public');

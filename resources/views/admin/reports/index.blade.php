@@ -13,15 +13,15 @@
                     <div class="flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
                         <input type="date" name="start_date" value="{{ $startDate }}"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                     </div>
                     <div class="flex-1">
                         <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                         <input type="date" name="end_date" value="{{ $endDate }}"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                     </div>
                     <div class="flex items-end">
-                        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                             Generate Report
                         </button>
                     </div>
@@ -57,8 +57,8 @@
                         <p class="text-sm font-medium text-gray-600">Total Orders</p>
                         <p class="text-2xl font-bold text-gray-900 mt-1">{{ $salesData['total_orders'] }}</p>
                     </div>
-                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
                             </path>
@@ -181,7 +181,7 @@
                                 <td class="px-6 py-4">{{ $seller->products_count ?? 0 }}</td>
                                 <td class="px-6 py-4">
                                     <a href="{{ route('admin.sellers.show', $seller) }}"
-                                        class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                        class="text-green-600 hover:text-green-700 text-sm font-medium">
                                         View Details
                                     </a>
                                 </td>

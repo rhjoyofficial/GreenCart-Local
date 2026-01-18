@@ -52,7 +52,7 @@
                 deleteBtn.addEventListener('click', function(e) {
                     if (!confirm(
                             'Are you sure you want to delete this product? This action cannot be undone.'
-                            )) {
+                        )) {
                         e.preventDefault();
                     }
                 });
@@ -86,7 +86,7 @@
                                 </label>
                                 <input type="text" id="name" name="name"
                                     value="{{ old('name', $product->name) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="Enter product name" required>
                                 @error('name')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -99,7 +99,7 @@
                                     SKU (Stock Keeping Unit) *
                                 </label>
                                 <input type="text" id="sku" name="sku" value="{{ old('sku', $product->sku) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="e.g., PROD-001" required>
                                 @error('sku')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -112,7 +112,7 @@
                                     Category
                                 </label>
                                 <select id="category_id" name="category_id"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}"
@@ -133,7 +133,7 @@
                                 </label>
                                 <input type="number" id="price" name="price"
                                     value="{{ old('price', $product->price) }}" step="0.01" min="0"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="0.00" required>
                                 @error('price')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -182,7 +182,7 @@
                                         </div>
                                     </div>
                                     <label for="image"
-                                        class="cursor-pointer bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+                                        class="cursor-pointer bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors inline-block">
                                         Choose New Image
                                     </label>
                                     <input type="file" id="image" name="image" class="hidden" accept="image/*">
@@ -203,7 +203,7 @@
                                 Product Description *
                             </label>
                             <textarea id="description" name="description" rows="6"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 placeholder="Describe your product in detail..." required>{{ old('description', $product->description) }}</textarea>
                             @error('description')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -222,7 +222,7 @@
                                 </label>
                                 <input type="number" id="stock_quantity" name="stock_quantity"
                                     value="{{ old('stock_quantity', $product->stock_quantity) }}" min="0"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     required>
                                 @error('stock_quantity')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -238,13 +238,13 @@
                                     <label class="flex items-center">
                                         <input type="radio" name="is_active" value="1"
                                             {{ old('is_active', $product->is_active) ? 'checked' : '' }}
-                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300">
                                         <span class="ml-2 text-gray-700">Active</span>
                                     </label>
                                     <label class="flex items-center">
                                         <input type="radio" name="is_active" value="0"
                                             {{ !old('is_active', $product->is_active) ? 'checked' : '' }}
-                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300">
                                         <span class="ml-2 text-gray-700">Inactive</span>
                                     </label>
                                 </div>
@@ -298,7 +298,7 @@
                                 Cancel
                             </a>
                             <button type="submit"
-                                class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                class="bg-green-600 text-white px-8 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
                                 Update Product
                             </button>
                         </div>

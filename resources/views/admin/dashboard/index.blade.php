@@ -30,8 +30,8 @@
             <!-- Total Orders -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div class="flex items-center">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                         </svg>
@@ -89,7 +89,7 @@
                     <div class="flex justify-between items-center mb-6">
                         <h3 class="text-lg font-semibold text-gray-900">Revenue Overview</h3>
                         <select
-                            class="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="border border-gray-300 rounded-lg px-3 py-1 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             <option>Last 6 months</option>
                             <option>Last year</option>
                             <option>All time</option>
@@ -138,7 +138,7 @@
                                 <tr class="hover:bg-gray-50">
                                     <td class="px-6 py-4">
                                         <a href="{{ route('admin.orders.show', $order) }}"
-                                            class="text-blue-600 hover:text-blue-700 font-medium">
+                                            class="text-green-600 hover:text-green-700 font-medium">
                                             {{ $order->order_number }}
                                         </a>
                                     </td>
@@ -153,7 +153,7 @@
                                         <span
                                             class="px-2 py-1 rounded-full text-xs font-medium 
                                         @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                                        @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                                        @elseif($order->status === 'processing') bg-green-100 text-blue-800
                                         @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                                         @elseif($order->status === 'delivered') bg-green-100 text-green-800
                                         @else bg-red-100 text-red-800 @endif">
@@ -166,7 +166,7 @@
                     </table>
                 </div>
                 <div class="p-4 border-t border-gray-200 text-center">
-                    <a href="{{ route('admin.orders.index') }}" class="text-blue-600 hover:text-blue-700 font-medium">
+                    <a href="{{ route('admin.orders.index') }}" class="text-green-600 hover:text-green-700 font-medium">
                         View all orders →
                     </a>
                 </div>
@@ -224,7 +224,8 @@
                     </table>
                 </div>
                 <div class="p-4 border-t border-gray-200 text-center">
-                    <a href="{{ route('admin.products.index') }}" class="text-blue-600 hover:text-blue-700 font-medium">
+                    <a href="{{ route('admin.products.index') }}"
+                        class="text-green-600 hover:text-green-700 font-medium">
                         View all products →
                     </a>
                 </div>

@@ -71,7 +71,7 @@
                                     Product Name *
                                 </label>
                                 <input type="text" id="name" name="name" value="{{ old('name') }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="Enter product name" required>
                                 @error('name')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -84,7 +84,7 @@
                                     SKU (Stock Keeping Unit) *
                                 </label>
                                 <input type="text" id="sku" name="sku" value="{{ old('sku') }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="e.g., PROD-001" required>
                                 @error('sku')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -97,7 +97,7 @@
                                     Category
                                 </label>
                                 <select id="category_id" name="category_id"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <option value="">Select Category</option>
                                     <!-- Categories will be populated from backend -->
                                     @foreach ($categories as $category)
@@ -119,7 +119,7 @@
                                 </label>
                                 <input type="number" id="price" name="price" value="{{ old('price') }}"
                                     step="0.01" min="0"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="0.00" required>
                                 @error('price')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -145,7 +145,7 @@
                             </div>
                             <div class="text-center">
                                 <label for="image"
-                                    class="cursor-pointer bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+                                    class="cursor-pointer bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors inline-block">
                                     Choose Image
                                 </label>
                                 <input type="file" id="image" name="image" class="hidden" accept="image/*">
@@ -165,7 +165,7 @@
                                 Product Description *
                             </label>
                             <textarea id="description" name="description" rows="6"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 placeholder="Describe your product in detail..." required>{{ old('description') }}</textarea>
                             @error('description')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -184,7 +184,7 @@
                                 </label>
                                 <input type="number" id="stock_quantity" name="stock_quantity"
                                     value="{{ old('stock_quantity', 0) }}" min="0"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     required>
                                 @error('stock_quantity')
                                     <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -199,12 +199,12 @@
                                 <div class="flex items-center space-x-4">
                                     <label class="flex items-center">
                                         <input type="radio" name="is_active" value="1" checked
-                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300">
                                         <span class="ml-2 text-gray-700">Active</span>
                                     </label>
                                     <label class="flex items-center">
                                         <input type="radio" name="is_active" value="0"
-                                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                            class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300">
                                         <span class="ml-2 text-gray-700">Inactive</span>
                                     </label>
                                 </div>
@@ -225,7 +225,7 @@
                                 Save as Draft
                             </button>
                             <button type="submit"
-                                class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                class="bg-green-600 text-white px-8 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
                                 Submit for Approval
                             </button>
                         </div>
@@ -235,32 +235,32 @@
         </div>
 
         <!-- Help Section -->
-        <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div class="mt-6 bg-green-50 border border-green-200 rounded-xl p-6">
             <h3 class="text-lg font-semibold text-blue-900 mb-3">Tips for a successful listing:</h3>
             <ul class="space-y-2 text-blue-800">
                 <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                    <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                     <span>Use clear, high-quality images that show your product from multiple angles</span>
                 </li>
                 <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                    <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                     <span>Write detailed descriptions including materials, dimensions, and care instructions</span>
                 </li>
                 <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                    <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                     <span>Set accurate stock levels to avoid overselling</span>
                 </li>
                 <li class="flex items-start">
-                    <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                    <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>

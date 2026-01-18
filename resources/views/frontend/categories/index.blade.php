@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Product Categories - Marketplace')
+@section('title', 'Product Categories - GreenCart-Local')
 
 @section('content')
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -22,19 +22,20 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($categories as $category)
                 <a href="{{ route('categories.show', $category->slug) }}"
-                    class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all overflow-hidden border border-gray-200 hover:border-blue-300">
+                    class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all overflow-hidden border border-gray-200 hover:border-green-300">
                     <div class="p-6">
                         <div class="flex items-center">
                             <div
-                                class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors">
-                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-green-200 transition-colors">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
                                     </path>
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                <h3 class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
                                     {{ $category->name }}
                                 </h3>
                                 <p class="text-sm text-gray-500 mt-1">{{ $category->products_count ?? 0 }} products</p>
@@ -44,10 +45,10 @@
                             <p class="mt-4 text-gray-600 text-sm line-clamp-2">{{ $category->description }}</p>
                         @endif
                     </div>
-                    <div class="px-6 py-3 bg-gray-50 border-t border-gray-100 group-hover:bg-blue-50 transition-colors">
+                    <div class="px-6 py-3 bg-gray-50 border-t border-gray-100 group-hover:bg-green-50 transition-colors">
                         <div class="flex items-center justify-between text-sm">
-                            <span class="text-blue-600 font-medium">Browse Products</span>
-                            <svg class="w-4 h-4 text-blue-600 transform group-hover:translate-x-1 transition-transform"
+                            <span class="text-green-600 font-medium">Browse Products</span>
+                            <svg class="w-4 h-4 text-green-600 transform group-hover:translate-x-1 transition-transform"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"></path>

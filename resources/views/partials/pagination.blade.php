@@ -82,7 +82,7 @@
                                 @if ($page == $paginator->currentPage())
                                     <span aria-current="page">
                                         <span
-                                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-blue-50 text-sm font-medium text-blue-600 border-blue-500 z-10">{{ $page }}</span>
+                                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-green-50 text-sm font-medium text-green-600 border-green-500 z-10">{{ $page }}</span>
                                     </span>
                                 @else
                                     <a href="{{ $url }}"

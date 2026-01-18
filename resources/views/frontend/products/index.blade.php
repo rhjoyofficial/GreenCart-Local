@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'All Products - Marketplace')
+@section('title', 'All Products - GreenCart-Local')
 
 @section('content')
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -23,7 +23,7 @@
                             @foreach ($navCategories as $category)
                                 <label class="flex items-center">
                                     <input type="checkbox" name="categories[]" value="{{ $category->id }}"
-                                        class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                                        class="rounded border-gray-300 text-green-600 focus:ring-green-500">
                                     <span class="ml-2 text-gray-600">{{ $category->name }}</span>
                                     <span class="ml-auto text-sm text-gray-500">({{ $category->products_count }})</span>
                                 </label>
@@ -45,7 +45,7 @@
                     </div>
 
                     <!-- Apply Filters Button -->
-                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                    <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
                         Apply Filters
                     </button>
 
@@ -69,7 +69,7 @@
                     <!-- Sort Options -->
                     <div class="mt-4 sm:mt-0">
                         <select
-                            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             <option>Sort by: Featured</option>
                             <option>Price: Low to High</option>
                             <option>Price: High to Low</option>
@@ -101,14 +101,22 @@
                                     @endif
                                     <!-- Wishlist Button -->
                                     @auth
+                                        @php
+                                            $isInWishlist =
+                                                auth()
+                                                    ->user()
+                                                    ->defaultWishlist?->products()
+                                                    ->where('product_id', $product->id)
+                                                    ->exists() ?? false;
+                                        @endphp
                                         <form action="{{ route('wishlist.toggle', $product) }}" method="POST"
-                                            class="add-to-wishlist-form absolute top-3 right-3">
+                                            class="add-to-wishlist-form">
                                             @csrf
                                             <button type="submit"
-                                                class="wishlist-btn bg-white/80 hover:bg-white backdrop-blur-sm p-2 rounded-full shadow-sm">
-                                                <svg class="w-5 h-5 {{ auth()->user()->defaultWishlist?->products()->where('product_id', $product->id)->exists() ? 'text-red-500 fill-red-500' : 'text-gray-500' }}"
-                                                    fill="{{ auth()->user()->defaultWishlist?->products()->where('product_id', $product->id)->exists() ? 'currentColor' : 'none' }}"
-                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                class="p-2 rounded-full border border-gray-300 hover:border-red-300 hover:bg-red-50 transition-colors">
+                                                <svg class="w-6 h-6 {{ $isInWishlist ? 'text-red-500 fill-red-500' : 'text-gray-500' }}"
+                                                    fill="{{ $isInWishlist ? 'currentColor' : 'none' }}" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
                                                     </path>
@@ -121,7 +129,7 @@
                             <div class="p-4">
                                 <a href="{{ route('products.show', $product->slug) }}" class="block">
                                     <h3
-                                        class="font-semibold text-gray-900 hover:text-blue-600 transition-colors line-clamp-1">
+                                        class="font-semibold text-gray-900 hover:text-green-600 transition-colors line-clamp-1">
                                         {{ $product->name }}
                                     </h3>
                                 </a>
@@ -155,7 +163,7 @@
                                         class="add-to-cart-form">
                                         @csrf
                                         <button type="submit"
-                                            class="add-to-cart-btn bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                            class="add-to-cart-btn bg-green-600 text-white p-2 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                             {{ $product->stock_quantity <= 0 ? 'disabled' : '' }}>
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -178,7 +186,7 @@
                             <p class="text-gray-600 mb-4">Try adjusting your search or filter to find what you're looking
                                 for.</p>
                             <a href="{{ route('products.index') }}"
-                                class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
                                 Clear Filters
                             </a>
                         </div>

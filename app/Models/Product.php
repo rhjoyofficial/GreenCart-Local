@@ -16,12 +16,15 @@ class Product extends Model
         'category_id',
         'name',
         'slug',
+        'sku',
+        'approval_status',
         'image',
         'description',
         'price',
         'stock_quantity',
-        'is_active'
+        'is_active',
     ];
+
 
     protected $casts = [
         'price' => 'decimal:2',

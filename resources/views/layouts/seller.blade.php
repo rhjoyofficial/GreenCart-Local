@@ -39,7 +39,7 @@
                         </div>
                         <div class="flex items-center space-x-4">
                             <!-- Business Name -->
-                            <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                            <span class="text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">
                                 {{ auth()->user()->business_name }}
                             </span>
 

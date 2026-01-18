@@ -5,14 +5,14 @@
 @section('content')
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Category Header -->
-        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 mb-8">
+        <div class="bg-gradient-to-r from-green-50 to-purple-50 rounded-lg p-8 mb-8">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h1 class="text-3xl font-bold text-gray-800 mb-2">{{ $category->name }}</h1>
                     <p class="text-gray-600">{{ $category->description }}</p>
                 </div>
                 <div class="bg-white px-4 py-2 rounded-lg shadow-sm">
-                    <span class="text-blue-600 font-semibold">{{ $products->total() }} Products</span>
+                    <span class="text-green-600 font-semibold">{{ $products->total() }} Products</span>
                 </div>
             </div>
         </div>
@@ -42,17 +42,17 @@
                         <h4 class="font-medium text-gray-700 mb-3">Stock Status</h4>
                         <div class="space-y-2">
                             <label class="flex items-center">
-                                <input type="checkbox" class="rounded text-blue-600">
+                                <input type="checkbox" class="rounded text-green-600">
                                 <span class="ml-2 text-gray-600">In Stock</span>
                             </label>
                             <label class="flex items-center">
-                                <input type="checkbox" class="rounded text-blue-600">
+                                <input type="checkbox" class="rounded text-green-600">
                                 <span class="ml-2 text-gray-600">Out of Stock</span>
                             </label>
                         </div>
                     </div>
 
-                    <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+                    <button class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">
                         Apply Filters
                     </button>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="flex items-center space-x-4">
                         <span class="text-gray-600">Sort by:</span>
                         <select
-                            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             <option>Featured</option>
                             <option>Price: Low to High</option>
                             <option>Price: High to Low</option>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="p-4">
                                 <a href="{{ route('products.show', $product->slug) }}" class="block">
-                                    <h3 class="font-medium text-gray-800 hover:text-blue-600 mb-1">{{ $product->name }}
+                                    <h3 class="font-medium text-gray-800 hover:text-green-600 mb-1">{{ $product->name }}
                                     </h3>
                                     <p class="text-sm text-gray-600 mb-2">By
                                         {{ $product->seller->business_name ?? $product->seller->name }}</p>
@@ -123,7 +123,7 @@
                                     </div>
                                 </a>
                                 <button
-                                    class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 add-to-cart"
+                                    class="w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300 add-to-cart"
                                     data-product-id="{{ $product->id }}">
                                     Add to Cart
                                 </button>

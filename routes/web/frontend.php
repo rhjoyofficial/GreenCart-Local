@@ -25,16 +25,19 @@ Route::get('/products/{slug}', [CustomerProductController::class, 'show'])->name
 Route::get('/categories', [CustomerCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{slug}', [CustomerCategoryController::class, 'show'])->name('categories.show');
 
-// Cart & Wishlist
+// Cart Routes
 Route::prefix('cart')->name('cart.')->group(function () {
     Route::get('/', [CustomerCartController::class, 'index'])->name('index');
     Route::post('/add/{product}', [CustomerCartController::class, 'add'])->name('add');
     Route::put('/update/{item}', [CustomerCartController::class, 'update'])->name('update');
     Route::delete('/remove/{item}', [CustomerCartController::class, 'remove'])->name('remove');
     Route::post('/clear', [CustomerCartController::class, 'clear'])->name('clear');
+    Route::get('/count', [CustomerCartController::class, 'count'])->name('count');
+    Route::get('/summary', [CustomerCartController::class, 'summary'])->name('summary');
 });
 
-Route::prefix('wishlist')->name('wishlist.')->group(function () {
+// Wishlist
+Route::prefix('wishlist')->name('wishlist.')->middleware('auth')->group(function () {
     Route::get('/', [CustomerWishlistController::class, 'index'])->name('index');
     Route::post('/toggle/{product}', [CustomerWishlistController::class, 'toggle'])->name('toggle');
 });

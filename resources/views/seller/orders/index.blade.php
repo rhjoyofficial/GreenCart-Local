@@ -76,8 +76,8 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="bg-white rounded-lg border border-gray-200 p-4">
                 <div class="flex items-center">
-                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -145,7 +145,7 @@
                     <div class="flex-1">
                         <div class="relative">
                             <input type="text" placeholder="Search orders..."
-                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -156,7 +156,7 @@
 
                     <!-- Status Filter -->
                     <select id="status-filter"
-                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="">All Status</option>
                         <option value="pending">Pending</option>
                         <option value="processing">Processing</option>
@@ -167,7 +167,7 @@
 
                     <!-- Date Filter -->
                     <input type="date"
-                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 </div>
             </div>
 
@@ -197,7 +197,7 @@
                             <tr data-status="{{ $order->status }}" class="hover:bg-gray-50">
                                 <td class="px-6 py-4">
                                     <a href="{{ route('seller.orders.show', $order) }}"
-                                        class="text-blue-600 hover:text-blue-700 font-medium">
+                                        class="text-green-600 hover:text-green-700 font-medium">
                                         {{ $order->order_number }}
                                     </a>
                                 </td>
@@ -218,7 +218,7 @@
                                     <span
                                         class="px-2 py-1 rounded-full text-xs font-medium 
                                     @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                                    @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                                    @elseif($order->status === 'processing') bg-green-100 text-blue-800
                                     @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                                     @elseif($order->status === 'delivered') bg-green-100 text-green-800
                                     @else bg-red-100 text-red-800 @endif">
@@ -228,7 +228,7 @@
                                 <td class="px-6 py-4">
                                     <div class="flex items-center space-x-3">
                                         <a href="{{ route('seller.orders.show', $order) }}"
-                                            class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                            class="text-green-600 hover:text-green-700 text-sm font-medium">
                                             View
                                         </a>
 
@@ -242,10 +242,10 @@
                                                     class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10 hidden">
                                                     @if ($order->status === 'pending')
                                                         <button
-                                                            class="update-status-btn block w-full text-left px-4 py-2 text-sm text-blue-600 hover:bg-blue-50"
+                                                            class="update-status-btn block w-full text-left px-4 py-2 text-sm text-green-600 hover:bg-green-50"
                                                             data-order-id="{{ $order->id }}" data-status="processing"
                                                             data-label="Processing"
-                                                            data-classes="bg-blue-100 text-blue-800">
+                                                            data-classes="bg-green-100 text-blue-800">
                                                             Mark as Processing
                                                         </button>
                                                     @endif
@@ -306,7 +306,7 @@
         </div>
 
         <!-- Order Status Guide -->
-        <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
             <h3 class="text-lg font-semibold text-blue-900 mb-4">Order Status Guide</h3>
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
                 <div class="text-center">
@@ -317,18 +317,18 @@
                         </svg>
                     </div>
                     <p class="text-sm font-medium text-blue-900">Pending</p>
-                    <p class="text-xs text-blue-700">Order received, waiting for processing</p>
+                    <p class="text-xs text-green-700">Order received, waiting for processing</p>
                 </div>
                 <div class="text-center">
-                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
                             </path>
                         </svg>
                     </div>
                     <p class="text-sm font-medium text-blue-900">Processing</p>
-                    <p class="text-xs text-blue-700">Preparing order for shipment</p>
+                    <p class="text-xs text-green-700">Preparing order for shipment</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -339,7 +339,7 @@
                         </svg>
                     </div>
                     <p class="text-sm font-medium text-blue-900">Shipped</p>
-                    <p class="text-xs text-blue-700">Order shipped to customer</p>
+                    <p class="text-xs text-green-700">Order shipped to customer</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -349,7 +349,7 @@
                         </svg>
                     </div>
                     <p class="text-sm font-medium text-blue-900">Delivered</p>
-                    <p class="text-xs text-blue-700">Order delivered successfully</p>
+                    <p class="text-xs text-green-700">Order delivered successfully</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -359,7 +359,7 @@
                         </svg>
                     </div>
                     <p class="text-sm font-medium text-blue-900">Cancelled</p>
-                    <p class="text-xs text-blue-700">Order cancelled</p>
+                    <p class="text-xs text-green-700">Order cancelled</p>
                 </div>
             </div>
         </div>

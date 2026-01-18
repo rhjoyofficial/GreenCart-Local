@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Terms & Conditions - Marketplace')
+@section('title', 'Terms & Conditions - GreenCart-Local')
 
 @section('content')
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -16,7 +16,7 @@
                 <section class="mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
                     <p class="text-gray-700 mb-4">
-                        Welcome to Marketplace. These Terms and Conditions govern your use of our website and services.
+                        Welcome to GreenCart-Local. These Terms and Conditions govern your use of our website and services.
                         By accessing or using our platform, you agree to be bound by these terms.
                     </p>
                     <p class="text-gray-700">
@@ -39,7 +39,7 @@
 
                 <!-- Buyer Terms -->
                 <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Buying on Marketplace</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">3. Buying on GreenCart-Local</h2>
                     <p class="text-gray-700 mb-4">
                         When you purchase products on our platform:
                     </p>
@@ -54,7 +54,7 @@
 
                 <!-- Seller Terms -->
                 <section class="mb-8">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Selling on Marketplace</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Selling on GreenCart-Local</h2>
                     <p class="text-gray-700 mb-4">
                         If you register as a seller, you agree to:
                     </p>
@@ -129,7 +129,7 @@
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">7. Intellectual Property</h2>
                     <p class="text-gray-700 mb-4">
                         All content on our platform, including text, graphics, logos, and software,
-                        is the property of Marketplace or its content suppliers and is protected by
+                        is the property of GreenCart-Local or its content suppliers and is protected by
                         copyright and intellectual property laws.
                     </p>
                     <p class="text-gray-700">
@@ -142,7 +142,7 @@
                 <section class="mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">8. Limitation of Liability</h2>
                     <p class="text-gray-700 mb-4">
-                        Marketplace acts as a platform connecting buyers and sellers. We are not
+                        GreenCart-Local acts as a platform connecting buyers and sellers. We are not
                         responsible for:
                     </p>
                     <ul class="list-disc pl-6 text-gray-700 space-y-2">

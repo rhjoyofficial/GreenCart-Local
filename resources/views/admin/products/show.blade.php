@@ -24,7 +24,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <a href="{{ route('admin.products.edit', $product) }}"
-                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                             Edit Product
                         </a>
                         <form action="{{ route('admin.products.approve', $product) }}" method="POST" class="inline">
@@ -149,7 +149,7 @@
                                 <p class="text-gray-900">{{ $product->seller->phone }}</p>
                             </div>
                             <a href="{{ route('admin.sellers.show', $product->seller) }}"
-                                class="inline-block text-blue-600 hover:text-blue-700 text-sm font-medium">
+                                class="inline-block text-green-600 hover:text-green-700 text-sm font-medium">
                                 View Seller Profile →
                             </a>
                         </div>

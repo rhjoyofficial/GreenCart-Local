@@ -14,7 +14,7 @@
                         <span
                             class="px-3 py-1 rounded-full text-sm font-medium 
                         @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                        @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                        @elseif($order->status === 'processing') bg-green-100 text-blue-800
                         @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                         @elseif($order->status === 'delivered') bg-green-100 text-green-800
                         @else bg-red-100 text-red-800 @endif">
@@ -29,7 +29,7 @@
                         class="flex items-center space-x-2">
                         @csrf
                         <select name="status"
-                            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             <option value="pending" {{ $order->status === 'pending' ? 'selected' : '' }}>Pending</option>
                             <option value="processing" {{ $order->status === 'processing' ? 'selected' : '' }}>Processing
                             </option>
@@ -40,7 +40,7 @@
                             </option>
                         </select>
                         <button type="submit"
-                            class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                             Update
                         </button>
                     </form>
@@ -107,7 +107,7 @@
                                                 @endif
                                                 <div>
                                                     <a href="{{ route('admin.products.show', $item->product) }}"
-                                                        class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                        class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                         {{ $item->product->name }}
                                                     </a>
                                                     <p class="text-xs text-gray-500">{{ $item->product->sku }}</p>
@@ -200,7 +200,7 @@
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Order Actions</h3>
                     <div class="space-y-3">
                         <a href="{{ route('admin.orders.invoice', $order) }}"
-                            class="w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors block">
+                            class="w-full bg-green-600 text-white text-center py-2 rounded-lg hover:bg-green-700 transition-colors block">
                             Generate Invoice
                         </a>
                         @if ($order->status !== 'cancelled' && $order->status !== 'delivered')

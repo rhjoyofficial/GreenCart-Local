@@ -16,7 +16,7 @@
             <form action="{{ route('admin.products.index') }}" method="GET" class="w-full md:w-auto">
                 <div class="relative">
                     <input type="text" name="search" placeholder="Search products..." value="{{ request('search') }}"
-                        class="w-full md:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full md:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                     <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -34,7 +34,7 @@
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Seller</label>
                     <select name="seller_id"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="">All Sellers</option>
                         @foreach ($sellers as $seller)
                             <option value="{{ $seller->id }}" {{ request('seller_id') == $seller->id ? 'selected' : '' }}>
@@ -48,7 +48,7 @@
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Approval Status</label>
                     <select name="approval_status"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="all" {{ request('approval_status') == 'all' ? 'selected' : '' }}>All Status
                         </option>
                         <option value="pending" {{ request('approval_status') == 'pending' ? 'selected' : '' }}>Pending
@@ -62,7 +62,7 @@
 
                 <!-- Buttons -->
                 <div class="md:w-1/3 flex items-end space-x-2">
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex-1">
+                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex-1">
                         Filter
                     </button>
                     <a href="{{ route('admin.products.index') }}"
@@ -115,7 +115,7 @@
                                         @endif
                                         <div>
                                             <a href="{{ route('admin.products.show', $product) }}"
-                                                class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                 {{ $product->name }}
                                             </a>
                                             <div class="text-xs text-gray-500">{{ $product->sku }}</div>
@@ -151,7 +151,7 @@
                                         <!-- Active Status -->
                                         <span
                                             class="px-2 py-1 rounded-full text-xs font-medium 
-                                    @if ($product->is_active) bg-blue-100 text-blue-800 @else bg-gray-100 text-gray-800 @endif">
+                                    @if ($product->is_active) bg-green-100 text-blue-800 @else bg-gray-100 text-gray-800 @endif">
                                             {{ $product->is_active ? 'Active' : 'Inactive' }}
                                         </span>
                                     </div>
@@ -159,7 +159,7 @@
                                 <td class="px-6 py-4 text-sm font-medium">
                                     <div class="flex space-x-2">
                                         <a href="{{ route('admin.products.show', $product) }}"
-                                            class="text-blue-600 hover:text-blue-700">View</a>
+                                            class="text-green-600 hover:text-green-700">View</a>
                                         <a href="{{ route('admin.products.edit', $product) }}"
                                             class="text-green-600 hover:text-green-700">Edit</a>
                                     </div>

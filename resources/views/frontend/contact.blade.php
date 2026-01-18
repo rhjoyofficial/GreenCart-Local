@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Contact Us - Marketplace')
+@section('title', 'Contact Us - GreenCart-Local')
 
 @section('content')
     <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -27,7 +27,7 @@
                                 Full Name *
                             </label>
                             <input type="text" id="name" name="name" value="{{ old('name') }}"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 placeholder="Your name" required>
                             @error('name')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -40,7 +40,7 @@
                                 Email Address *
                             </label>
                             <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 placeholder="your@email.com" required>
                             @error('email')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -53,7 +53,7 @@
                                 Subject
                             </label>
                             <select id="subject" name="subject"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                 <option value="">Select a subject</option>
                                 <option value="general">General Inquiry</option>
                                 <option value="support">Technical Support</option>
@@ -69,7 +69,7 @@
                                 Message *
                             </label>
                             <textarea id="message" name="message" rows="6"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 placeholder="How can we help you?" required>{{ old('message') }}</textarea>
                             @error('message')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -79,7 +79,7 @@
                         <!-- Submit Button -->
                         <div>
                             <button type="submit"
-                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-colors font-medium">
                                 Send Message
                             </button>
                         </div>
@@ -92,8 +92,8 @@
                 <!-- Contact Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
                                 </path>
@@ -138,19 +138,19 @@
                 </div>
 
                 <!-- FAQ Preview -->
-                <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <div class="bg-green-50 border border-green-200 rounded-xl p-6">
                     <h3 class="text-lg font-semibold text-blue-900 mb-4">Frequently Asked Questions</h3>
                     <div class="space-y-4">
                         <div>
                             <h4 class="font-medium text-blue-800">How do I track my order?</h4>
-                            <p class="text-sm text-blue-700 mt-1">Go to My Orders section in your account dashboard.</p>
+                            <p class="text-sm text-green-700 mt-1">Go to My Orders section in your account dashboard.</p>
                         </div>
                         <div>
                             <h4 class="font-medium text-blue-800">What is your return policy?</h4>
-                            <p class="text-sm text-blue-700 mt-1">We offer 30-day returns for most products.</p>
+                            <p class="text-sm text-green-700 mt-1">We offer 30-day returns for most products.</p>
                         </div>
                     </div>
-                    <a href="{{ route('faqs') }}" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium">
+                    <a href="{{ route('faqs') }}" class="inline-block mt-4 text-green-600 hover:text-green-700 font-medium">
                         View all FAQs →
                     </a>
                 </div>

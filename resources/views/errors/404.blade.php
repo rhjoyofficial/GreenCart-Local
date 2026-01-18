@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Page Not Found - Marketplace')
+@section('title', 'Page Not Found - GreenCart-Local')
 
 @section('content')
     <div class="min-h-[70vh] flex items-center justify-center">
@@ -25,7 +25,7 @@
             <div class="mb-8">
                 <div class="relative max-w-md mx-auto">
                     <input type="text" placeholder="Search for products..."
-                        class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                     <svg class="absolute left-4 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -37,7 +37,7 @@
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ url()->previous() }}"
-                    class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
                     Go Back
                 </a>
                 <a href="{{ route('home') }}"
@@ -50,16 +50,16 @@
             <div class="mt-12 pt-8 border-t border-gray-200">
                 <p class="text-gray-600 mb-4">Or try one of these pages:</p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="{{ route('products.index') }}" class="text-blue-600 hover:text-blue-700">
+                    <a href="{{ route('products.index') }}" class="text-green-600 hover:text-green-700">
                         Products
                     </a>
-                    <a href="{{ route('categories.index') }}" class="text-blue-600 hover:text-blue-700">
+                    <a href="{{ route('categories.index') }}" class="text-green-600 hover:text-green-700">
                         Categories
                     </a>
-                    <a href="{{ route('cart.index') }}" class="text-blue-600 hover:text-blue-700">
+                    <a href="{{ route('cart.index') }}" class="text-green-600 hover:text-green-700">
                         Shopping Cart
                     </a>
-                    <a href="{{ route('contact') }}" class="text-blue-600 hover:text-blue-700">
+                    <a href="{{ route('contact') }}" class="text-green-600 hover:text-green-700">
                         Contact Us
                     </a>
                 </div>

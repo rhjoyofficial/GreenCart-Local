@@ -25,7 +25,7 @@
                                 <label for="customer_id" class="block text-sm font-medium text-gray-700 mb-2">Select
                                     Customer *</label>
                                 <select name="customer_id" id="customer_id" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <option value="">Choose a customer</option>
                                     @foreach ($customers as $customer)
                                         <option value="{{ $customer->id }}">
@@ -40,7 +40,7 @@
                                 <label for="shipping_address" class="block text-sm font-medium text-gray-700 mb-2">Shipping
                                     Address *</label>
                                 <textarea name="shipping_address" id="shipping_address" rows="3" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="Enter shipping address"></textarea>
                             </div>
 
@@ -49,7 +49,7 @@
                                 <label for="billing_address" class="block text-sm font-medium text-gray-700 mb-2">Billing
                                     Address</label>
                                 <textarea name="billing_address" id="billing_address" rows="3"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="Enter billing address (optional)"></textarea>
                             </div>
 
@@ -58,7 +58,7 @@
                                 <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">Order
                                     Notes</label>
                                 <textarea name="notes" id="notes" rows="2"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                     placeholder="Any special instructions or notes"></textarea>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-lg font-semibold text-gray-800">Order Items</h3>
                             <button type="button" id="add-item"
-                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm">
+                                class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm">
                                 Add Item
                             </button>
                         </div>
@@ -83,7 +83,7 @@
                                 <div class="md:col-span-5">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Product *</label>
                                     <select name="items[0][product_id]" required
-                                        class="product-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                        class="product-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                         <option value="">Select Product</option>
                                         @foreach ($products as $product)
                                             <option value="{{ $product->id }}" data-price="{{ $product->price }}"
@@ -100,7 +100,7 @@
                                 <div class="md:col-span-3">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Seller *</label>
                                     <select name="items[0][seller_id]" required
-                                        class="seller-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                        class="seller-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                         <option value="">Select Seller</option>
                                         @foreach ($sellers as $seller)
                                             <option value="{{ $seller->id }}">
@@ -113,7 +113,7 @@
                                 <div class="md:col-span-2">
                                     <label class="block text-sm font-medium text-gray-700 mb-2">Quantity *</label>
                                     <input type="number" name="items[0][quantity]" min="1" value="1" required
-                                        class="quantity-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                        class="quantity-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <div class="stock-info text-xs text-gray-500 mt-1"></div>
                                 </div>
 
@@ -168,7 +168,7 @@
                                 <label for="payment_method" class="block text-sm font-medium text-gray-700 mb-2">Payment
                                     Method *</label>
                                 <select name="payment_method" id="payment_method" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <option value="">Select Method</option>
                                     <option value="Cash on Delivery">Cash on Delivery</option>
                                     <option value="Credit Card">Credit Card</option>
@@ -183,7 +183,7 @@
                                 <label for="payment_status" class="block text-sm font-medium text-gray-700 mb-2">Payment
                                     Status *</label>
                                 <select name="payment_status" id="payment_status" required
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <option value="pending">Pending</option>
                                     <option value="paid">Paid</option>
                                     <option value="failed">Failed</option>
@@ -198,7 +198,7 @@
                             class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
                             Cancel
                         </a>
-                        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                             Create Order
                         </button>
                     </div>

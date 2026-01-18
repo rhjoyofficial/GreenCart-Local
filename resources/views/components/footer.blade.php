@@ -4,10 +4,10 @@
             <!-- Company Info -->
             <div>
                 <a href="{{ route('home') }}" class="flex items-center space-x-2 mb-4">
-                    <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-xl">M</span>
+                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">G</span>
                     </div>
-                    <span class="text-xl font-bold">Marketplace</span>
+                    <span class="text-xl font-bold">GreenCart-Local</span>
                 </a>
                 <p class="text-gray-400 mb-4">
                     Your trusted multi-vendor e-commerce platform. Shop from thousands of sellers worldwide.
@@ -64,9 +64,9 @@
                 <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
                 <form class="space-y-2">
                     <input type="email" placeholder="Your email"
-                        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white">
+                        class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none text-white">
                     <button type="submit"
-                        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
                         Subscribe
                     </button>
                 </form>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {{ date('Y') }} Marketplace. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }} GreenCart-Local. All rights reserved.</p>
             <p class="mt-2 text-sm">Multi-Vendor E-Commerce Platform built with Laravel</p>
         </div>
     </div>

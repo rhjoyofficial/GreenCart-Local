@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Server Error - Marketplace')
+@section('title', 'Server Error - GreenCart-Local')
 
 @section('content')
     <div class="min-h-[70vh] flex items-center justify-center">
@@ -25,7 +25,7 @@
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ route('home') }}"
-                    class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
                     Go to Homepage
                 </a>
                 <a href="{{ url()->previous() }}"

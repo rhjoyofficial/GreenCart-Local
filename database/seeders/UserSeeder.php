@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
 
         // Admin User
         User::create([
-            'name' => 'Rakibul Hasan Joy',
+            'name' => 'Toqi Ahmed',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
             'role_id' => $adminRole->id,
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         // Seller Users
         $sellers = [
             [
-                'name' => 'Toqi Ahmed',
+                'name' => 'Seller Toqi Ahmed',
                 'email' => 'seller@example.com',
                 'password' => Hash::make('password'),
                 'business_name' => 'Toqi Electronics',

@@ -7,7 +7,7 @@
 @section('content')
     <div class="space-y-6">
         <!-- Welcome Banner -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white">
+        <div class="bg-gradient-to-r from-green-600 to-purple-600 rounded-2xl p-6 text-white">
             <div class="flex flex-col md:flex-row md:items-center justify-between">
                 <div>
                     <h2 class="text-2xl font-bold mb-2">Hello, {{ auth()->user()->name }}!</h2>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="mt-4 md:mt-0">
                     <a href="{{ route('products.index') }}"
-                        class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
+                        class="bg-white text-green-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
                         Continue Shopping
                     </a>
                 </div>
@@ -27,8 +27,8 @@
             <!-- Total Orders -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div class="flex items-center">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                         </svg>
@@ -76,7 +76,7 @@
                         <p class="text-sm text-gray-500">Cart Items</p>
                         <p class="text-2xl font-bold text-gray-900">
                             {{ auth()->user()->cart?->items()->sum('quantity') ?? 0 }}</p>
-                        <p class="text-sm text-blue-600">
+                        <p class="text-sm text-green-600">
                             <a href="{{ route('cart.index') }}" class="hover:underline">View cart</a>
                         </p>
                     </div>
@@ -110,7 +110,7 @@
                 <div class="p-6 border-b border-gray-200">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-900">Recent Orders</h3>
-                        <a href="{{ route('customer.orders.index') }}" class="text-sm text-blue-600 hover:text-blue-700">
+                        <a href="{{ route('customer.orders.index') }}" class="text-sm text-green-600 hover:text-green-700">
                             View all
                         </a>
                     </div>
@@ -137,7 +137,7 @@
                                 <tr class="hover:bg-gray-50">
                                     <td class="px-6 py-4">
                                         <a href="{{ route('customer.orders.show', $order) }}"
-                                            class="text-blue-600 hover:text-blue-700 font-medium">
+                                            class="text-green-600 hover:text-green-700 font-medium">
                                             {{ $order->order_number }}
                                         </a>
                                     </td>
@@ -151,7 +151,7 @@
                                         <span
                                             class="px-2 py-1 rounded-full text-xs font-medium 
                                         @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                                        @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                                        @elseif($order->status === 'processing') bg-green-100 text-blue-800
                                         @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                                         @elseif($order->status === 'delivered') bg-green-100 text-green-800
                                         @else bg-red-100 text-red-800 @endif">
@@ -163,7 +163,7 @@
                                 <tr>
                                     <td colspan="4" class="px-6 py-8 text-center text-gray-500">
                                         No orders yet. <a href="{{ route('products.index') }}"
-                                            class="text-blue-600 hover:text-blue-700">Start shopping</a>
+                                            class="text-green-600 hover:text-green-700">Start shopping</a>
                                     </td>
                                 </tr>
                             @endforelse
@@ -177,7 +177,7 @@
                 <div class="p-6 border-b border-gray-200">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-900">Wishlist</h3>
-                        <a href="{{ route('wishlist.index') }}" class="text-sm text-blue-600 hover:text-blue-700">
+                        <a href="{{ route('wishlist.index') }}" class="text-sm text-green-600 hover:text-green-700">
                             View all
                         </a>
                     </div>
@@ -211,7 +211,7 @@
                                             @endif
                                             <div>
                                                 <a href="{{ route('products.show', $product->slug) }}"
-                                                    class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                    class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                     {{ Str::limit($product->name, 30) }}
                                                 </a>
                                             </div>
@@ -231,7 +231,9 @@
                                             <form action="{{ route('cart.add', $product) }}" method="POST"
                                                 class="add-to-cart-form">
                                                 @csrf
-                                                <button type="submit" class="text-blue-600 hover:text-blue-700 text-sm"
+                                                <input type="hidden" name="quantity" value="1">
+                                                <button type="submit"
+                                                    class="add-to-cart-btn text-green-600 hover:text-green-700 text-sm"
                                                     {{ $product->stock_quantity <= 0 ? 'disabled' : '' }}>
                                                     Add to Cart
                                                 </button>
@@ -243,7 +245,7 @@
                                 <tr>
                                     <td colspan="4" class="px-6 py-8 text-center text-gray-500">
                                         Your wishlist is empty. <a href="{{ route('products.index') }}"
-                                            class="text-blue-600 hover:text-blue-700">Browse products</a>
+                                            class="text-green-600 hover:text-green-700">Browse products</a>
                                     </td>
                                 </tr>
                             @endforelse
@@ -258,10 +260,11 @@
             <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <a href="{{ route('customer.orders.index') }}"
-                    class="p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                    class="p-4 border border-gray-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors">
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
                                 </path>
@@ -339,7 +342,7 @@
                     <h3 class="text-lg font-semibold text-gray-900">Recently Viewed</h3>
                     <p class="text-sm text-gray-600 mt-1">Products you recently viewed</p>
                 </div>
-                <a href="{{ route('products.index') }}" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                <a href="{{ route('products.index') }}" class="text-green-600 hover:text-green-700 text-sm font-medium">
                     View All Products
                 </a>
             </div>
@@ -350,7 +353,7 @@
                         <div class="aspect-square bg-gray-200 rounded-lg mb-2 overflow-hidden">
                             <div class="w-full h-full group-hover:scale-110 transition-transform duration-300"></div>
                         </div>
-                        <p class="text-sm text-gray-900 truncate group-hover:text-blue-600">Product {{ $i + 1 }}
+                        <p class="text-sm text-gray-900 truncate group-hover:text-green-600">Product {{ $i + 1 }}
                         </p>
                         <p class="text-sm font-medium text-gray-900">TK{{ rand(100, 1000) }}</p>
                     </div>

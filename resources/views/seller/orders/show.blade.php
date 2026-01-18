@@ -52,7 +52,7 @@
                         <span id="current-status"
                             class="px-3 py-1 rounded-full text-sm font-medium 
                         @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                        @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                        @elseif($order->status === 'processing') bg-green-100 text-blue-800
                         @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                         @elseif($order->status === 'delivered') bg-green-100 text-green-800
                         @else bg-red-100 text-red-800 @endif">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="mt-4 md:mt-0 flex items-center space-x-3">
                     <!-- Print Invoice -->
-                    <button id="print-invoice" class="flex items-center text-blue-600 hover:text-blue-700">
+                    <button id="print-invoice" class="flex items-center text-green-600 hover:text-green-700">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
@@ -75,16 +75,17 @@
                     <!-- Status Update Dropdown -->
                     @if (!in_array($order->status, ['delivered', 'cancelled']))
                         <div class="relative">
-                            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            <button
+                                class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                                 Update Status
                             </button>
                             <div
                                 class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10 hidden">
                                 @if ($order->status === 'pending')
                                     <button
-                                        class="update-status-btn block w-full text-left px-4 py-2 text-sm text-blue-600 hover:bg-blue-50"
+                                        class="update-status-btn block w-full text-left px-4 py-2 text-sm text-green-600 hover:bg-green-50"
                                         data-status="processing" data-label="Processing"
-                                        data-classes="bg-blue-100 text-blue-800">
+                                        data-classes="bg-green-100 text-blue-800">
                                         Mark as Processing
                                     </button>
                                 @endif
@@ -180,7 +181,7 @@
                                                 <div>
                                                     <a href="{{ route('products.show', $item->product->slug) }}"
                                                         target="_blank"
-                                                        class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                        class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                         {{ $item->product->name }}
                                                     </a>
                                                     <p class="text-xs text-gray-500">{{ $item->product->sku }}</p>
@@ -271,7 +272,7 @@
 
                         <!-- Contact Customer -->
                         <button
-                            class="w-full border border-blue-300 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                            class="w-full border border-green-300 text-green-600 py-2 rounded-lg hover:bg-green-50 transition-colors">
                             Contact Customer
                         </button>
 
@@ -279,10 +280,10 @@
                         <div class="pt-3 border-t border-gray-200">
                             <h4 class="font-medium text-gray-700 mb-2">Add Note</h4>
                             <textarea rows="3"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none text-sm"
                                 placeholder="Add private note about this order..."></textarea>
                             <button
-                                class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                class="mt-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm">
                                 Save Note
                             </button>
                         </div>

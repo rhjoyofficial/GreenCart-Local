@@ -31,15 +31,15 @@
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
                     <input type="date" name="start_date" value="{{ $startDate }}"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 </div>
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">End Date</label>
                     <input type="date" name="end_date" value="{{ $endDate }}"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 </div>
                 <div class="md:w-1/3 flex items-end space-x-2">
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex-1">
+                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex-1">
                         Update
                     </button>
                     <a href="{{ route('admin.reports.sales') }}"
@@ -102,7 +102,7 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4">
                                     <a href="{{ route('admin.orders.show', $order) }}"
-                                        class="text-blue-600 hover:text-blue-700 font-medium">
+                                        class="text-green-600 hover:text-green-700 font-medium">
                                         {{ $order->order_number }}
                                     </a>
                                 </td>
@@ -123,7 +123,7 @@
                                     <span
                                         class="px-2 py-1 rounded-full text-xs font-medium 
                                 @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                                @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                                @elseif($order->status === 'processing') bg-green-100 text-blue-800
                                 @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                                 @elseif($order->status === 'delivered') bg-green-100 text-green-800
                                 @else bg-red-100 text-red-800 @endif">

@@ -52,26 +52,37 @@
                                     </div>
                                 @endif
                                 <!-- Remove from Wishlist Button -->
-                                <form action="{{ route('wishlist.toggle', $product) }}" method="POST"
-                                    class="absolute top-3 right-3 add-to-wishlist-form">
-                                    @csrf
-                                    <button type="submit"
-                                        class="wishlist-remove-btn bg-white/80 hover:bg-white backdrop-blur-sm p-2 rounded-full shadow-sm">
-                                        <svg class="w-5 h-5 text-red-500 fill-red-500" fill="currentColor"
-                                            stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                            </path>
-                                        </svg>
-                                    </button>
-                                </form>
+                                @auth
+                                    @php
+                                        $isInWishlist =
+                                            auth()
+                                                ->user()
+                                                ->defaultWishlist?->products()
+                                                ->where('product_id', $product->id)
+                                                ->exists() ?? false;
+                                    @endphp
+                                    <form action="{{ route('wishlist.toggle', $product) }}" method="POST"
+                                        class="add-to-wishlist-form">
+                                        @csrf
+                                        <button type="submit"
+                                            class="p-2 rounded-full border border-gray-300 hover:border-red-300 hover:bg-red-50 transition-colors">
+                                            <svg class="w-6 h-6 {{ $isInWishlist ? 'text-red-500 fill-red-500' : 'text-gray-500' }}"
+                                                fill="{{ $isInWishlist ? 'currentColor' : 'none' }}" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                @endauth
                             </div>
                         </a>
 
                         <!-- Product Info -->
                         <div class="p-4">
                             <a href="{{ route('products.show', $product->slug) }}" class="block">
-                                <h3 class="font-semibold text-gray-900 hover:text-blue-600 transition-colors line-clamp-1">
+                                <h3 class="font-semibold text-gray-900 hover:text-green-600 transition-colors line-clamp-1">
                                     {{ $product->name }}
                                 </h3>
                             </a>
@@ -110,8 +121,9 @@
                                     <form action="{{ route('cart.add', $product) }}" method="POST"
                                         class="add-to-cart-form">
                                         @csrf
+                                        <input type="hidden" name="quantity" value="1">
                                         <button type="submit"
-                                            class="add-to-cart-btn bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                            class="add-to-cart-btn bg-green-600 text-white p-2 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                             {{ $product->stock_quantity <= 0 ? 'disabled' : '' }} title="Add to Cart">
                                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -143,7 +155,7 @@
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Your wishlist is empty</h3>
                 <p class="text-gray-600 mb-4">Save items you like to your wishlist for easy access later</p>
                 <a href="{{ route('products.index') }}"
-                    class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
                     Start Shopping
                 </a>
             </div>
@@ -153,7 +165,7 @@
         <div class="mt-12">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-lg font-semibold text-gray-900">Recently Viewed</h3>
-                <a href="{{ route('products.index') }}" class="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                <a href="{{ route('products.index') }}" class="text-green-600 hover:text-green-700 text-sm font-medium">
                     View All
                 </a>
             </div>

@@ -21,14 +21,14 @@
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
                     <input type="text" name="search" placeholder="Search sellers..." value="{{ request('search') }}"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 </div>
 
                 <!-- Status Filter -->
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
                     <select name="is_active"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="all" {{ request('is_active') == 'all' ? 'selected' : '' }}>All Status</option>
                         <option value="active" {{ request('is_active') == 'active' ? 'selected' : '' }}>Active</option>
                         <option value="inactive" {{ request('is_active') == 'inactive' ? 'selected' : '' }}>Inactive
@@ -38,7 +38,7 @@
 
                 <!-- Buttons -->
                 <div class="md:w-1/3 flex items-end space-x-2">
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex-1">
+                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex-1">
                         Filter
                     </button>
                     <a href="{{ route('admin.sellers.index') }}"
@@ -84,7 +84,7 @@
                                         </div>
                                         <div>
                                             <a href="{{ route('admin.sellers.show', $seller) }}"
-                                                class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                 {{ $seller->name }}
                                             </a>
                                             <div class="text-xs text-gray-500">{{ $seller->email }}</div>
@@ -96,7 +96,7 @@
                                     <div class="text-xs text-gray-500">{{ $seller->phone ?? 'N/A' }}</div>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                                    <span class="px-2 py-1 bg-green-100 text-blue-800 rounded-full text-xs font-medium">
                                         {{ $seller->products_count }}
                                     </span>
                                 </td>
@@ -124,7 +124,7 @@
                                 <td class="px-6 py-4 text-sm font-medium">
                                     <div class="flex space-x-3">
                                         <a href="{{ route('admin.sellers.show', $seller) }}"
-                                            class="text-blue-600 hover:text-blue-700">View</a>
+                                            class="text-green-600 hover:text-green-700">View</a>
                                         <a href="{{ route('admin.sellers.edit', $seller) }}"
                                             class="text-green-600 hover:text-green-700">Edit</a>
                                     </div>

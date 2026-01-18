@@ -61,7 +61,7 @@
             </div>
             <div class="mt-4 md:mt-0">
                 <a href="{{ route('seller.products.create') }}"
-                    class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium inline-flex items-center">
+                    class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium inline-flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -75,8 +75,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="bg-white rounded-lg border border-gray-200 p-4">
                 <div class="flex items-center">
-                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
@@ -130,7 +130,7 @@
                     <div class="flex-1">
                         <div class="relative">
                             <input type="text" placeholder="Search products..."
-                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -141,7 +141,7 @@
 
                     <!-- Status Filter -->
                     <select
-                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="">All Status</option>
                         <option value="active">Active</option>
                         <option value="inactive">Inactive</option>
@@ -151,7 +151,7 @@
 
                     <!-- Category Filter -->
                     <select
-                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="">All Categories</option>
                         <!-- Add categories here -->
                     </select>
@@ -198,7 +198,7 @@
                                         @endif
                                         <div>
                                             <a href="{{ route('products.show', $product->slug) }}" target="_blank"
-                                                class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                 {{ Str::limit($product->name, 40) }}
                                             </a>
                                             <p class="text-xs text-gray-500">{{ $product->sku }}</p>
@@ -233,7 +233,7 @@
                                 <td class="px-6 py-4">
                                     <div class="flex items-center space-x-2">
                                         <a href="{{ route('seller.products.edit', $product) }}"
-                                            class="text-blue-600 hover:text-blue-700 p-1" title="Edit">
+                                            class="text-green-600 hover:text-green-700 p-1" title="Edit">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -244,7 +244,7 @@
 
                                         <button class="toggle-status-btn text-green-600 hover:text-green-700 p-1"
                                             data-product-id="{{ $product->id }}"
-                                            data-url="{{ route('seller.products.toggle-status', $product) }}"
+                                            data-url="{{ route('seller.products.toggleStatus', $product) }}"
                                             title="{{ $product->is_active ? 'Deactivate' : 'Activate' }}">
                                             @if ($product->is_active)
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor"
@@ -291,7 +291,7 @@
                                     <h3 class="text-lg font-semibold text-gray-900 mb-2">No products yet</h3>
                                     <p class="text-gray-600 mb-4">Start by adding your first product to sell</p>
                                     <a href="{{ route('seller.products.create') }}"
-                                        class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                        class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
                                         Add First Product
                                     </a>
                                 </td>

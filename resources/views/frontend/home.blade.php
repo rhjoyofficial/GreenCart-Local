@@ -1,10 +1,10 @@
 @extends('layouts.frontend')
 
-@section('title', 'Home - Multi-Vendor Marketplace')
+@section('title', 'Home - Multi-Vendor GreenCart-Local')
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <section class="relative bg-gradient-to-r from-green-700 via-teal-700 to-purple-600 text-white">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
@@ -16,11 +16,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="{{ route('products.index') }}"
-                            class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 text-center">
+                            class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105 text-center">
                             Shop Now
                         </a>
                         @if (!auth()->check() || auth()->user()->hasRole('customer'))
-                            <a href="{{ route('register') }}"
+                            <a href="{{ route('register', ['role' => 'seller']) }}"
                                 class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors text-center">
                                 Become a Seller
                             </a>
@@ -28,8 +28,8 @@
                     </div>
                 </div>
                 <div class="hidden lg:block">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                        alt="Shopping" class="rounded-2xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Farmers market produce display" class="rounded-2xl shadow-2xl">
                 </div>
             </div>
         </div>
@@ -45,16 +45,16 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 @foreach ($navCategories->take(6) as $category)
                     <a href="{{ route('categories.show', $category->slug) }}"
-                        class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 text-center border border-gray-100 hover:border-blue-200">
+                        class="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow p-6 text-center border border-gray-100 hover:border-green-200">
                         <div
-                            class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        <h3 class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
                             {{ $category->name }}
                         </h3>
                         <p class="text-sm text-gray-500 mt-1">{{ $category->products_count }} products</p>
@@ -73,7 +73,7 @@
                     <p class="text-gray-600 mt-2">Handpicked products from top sellers</p>
                 </div>
                 <a href="{{ route('products.index') }}"
-                    class="text-blue-600 hover:text-blue-700 font-semibold flex items-center">
+                    class="text-green-600 hover:text-green-700 font-semibold flex items-center">
                     View All
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
@@ -104,7 +104,7 @@
                         </a>
                         <div class="p-4">
                             <a href="{{ route('products.show', $product->slug) }}" class="block">
-                                <h3 class="font-semibold text-gray-900 hover:text-blue-600 transition-colors line-clamp-1">
+                                <h3 class="font-semibold text-gray-900 hover:text-green-600 transition-colors line-clamp-1">
                                     {{ $product->name }}
                                 </h3>
                             </a>
@@ -115,8 +115,10 @@
                                     class="text-lg font-bold text-gray-900">TK{{ number_format($product->price, 2) }}</span>
                                 <form action="{{ route('cart.add', $product) }}" method="POST" class="add-to-cart-form">
                                     @csrf
+                                    <input type="hidden" name="quantity" value="1">
                                     <button type="submit"
-                                        class="add-to-cart-btn bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                        class="add-to-cart-btn bg-green-600 text-white p-2 rounded-lg hover:bg-green-700 transition-colors"
+                                        data-product-id="{{ $product->id }}" data-product-name="{{ $product->name }}">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -135,7 +137,7 @@
     <section class="py-12">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Marketplace</h2>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Our GreenCart-Local</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">We provide the best shopping experience for both buyers and
                     sellers</p>
             </div>
@@ -152,8 +154,8 @@
                     <p class="text-gray-600">Your transactions are protected with bank-level security.</p>
                 </div>
                 <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>

@@ -26,8 +26,8 @@
             <!-- Total Products -->
             <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div class="flex items-center">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
                             </path>
@@ -111,7 +111,7 @@
                 <div class="p-6 border-b border-gray-200">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-900">Recent Orders</h3>
-                        <a href="{{ route('seller.orders.index') }}" class="text-sm text-blue-600 hover:text-blue-700">
+                        <a href="{{ route('seller.orders.index') }}" class="text-sm text-green-600 hover:text-green-700">
                             View all
                         </a>
                     </div>
@@ -138,7 +138,7 @@
                                 <tr class="hover:bg-gray-50">
                                     <td class="px-6 py-4">
                                         <a href="{{ route('seller.orders.show', $item->order) }}"
-                                            class="text-blue-600 hover:text-blue-700 font-medium">
+                                            class="text-green-600 hover:text-green-700 font-medium">
                                             {{ $item->order->order_number }}
                                         </a>
                                     </td>
@@ -152,7 +152,7 @@
                                         <span
                                             class="px-2 py-1 rounded-full text-xs font-medium 
                                         @if ($item->order->status === 'pending') bg-yellow-100 text-yellow-800
-                                        @elseif($item->order->status === 'processing') bg-blue-100 text-blue-800
+                                        @elseif($item->order->status === 'processing') bg-green-100 text-blue-800
                                         @elseif($item->order->status === 'shipped') bg-purple-100 text-purple-800
                                         @elseif($item->order->status === 'delivered') bg-green-100 text-green-800
                                         @else bg-red-100 text-red-800 @endif">
@@ -177,7 +177,7 @@
                 <div class="p-6 border-b border-gray-200">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-semibold text-gray-900">Top Selling Products</h3>
-                        <a href="{{ route('seller.products.index') }}" class="text-sm text-blue-600 hover:text-blue-700">
+                        <a href="{{ route('seller.products.index') }}" class="text-sm text-green-600 hover:text-green-700">
                             View all
                         </a>
                     </div>
@@ -216,7 +216,7 @@
                                             @endif
                                             <div>
                                                 <a href="{{ route('seller.products.edit', $product) }}"
-                                                    class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                    class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                     {{ Str::limit($product->name, 30) }}
                                                 </a>
                                                 <p class="text-xs text-gray-500">{{ $product->sku }}</p>
@@ -248,7 +248,7 @@
                                 <tr>
                                     <td colspan="4" class="px-6 py-8 text-center text-gray-500">
                                         No products yet. <a href="{{ route('seller.products.create') }}"
-                                            class="text-blue-600 hover:text-blue-700">Add your first product</a>
+                                            class="text-green-600 hover:text-green-700">Add your first product</a>
                                     </td>
                                 </tr>
                             @endforelse
@@ -263,10 +263,11 @@
             <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <a href="{{ route('seller.products.create') }}"
-                    class="p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors">
+                    class="p-4 border border-gray-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors">
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>

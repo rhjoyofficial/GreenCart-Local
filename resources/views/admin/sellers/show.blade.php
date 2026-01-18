@@ -33,7 +33,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <a href="{{ route('admin.sellers.edit', $seller) }}"
-                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                             Edit Seller
                         </a>
                         <a href="{{ route('admin.sellers.analytics', $seller) }}"
@@ -96,7 +96,7 @@
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-lg font-semibold text-gray-800">Recent Orders</h3>
                             <a href="{{ route('admin.sellers.orders', $seller) }}"
-                                class="text-sm text-blue-600 hover:text-blue-700">
+                                class="text-sm text-green-600 hover:text-green-700">
                                 View All
                             </a>
                         </div>
@@ -105,7 +105,7 @@
                                 <div class="flex items-center justify-between p-3 bg-white rounded-lg">
                                     <div>
                                         <a href="{{ route('admin.orders.show', $orderItem->order) }}"
-                                            class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                            class="text-sm font-medium text-gray-900 hover:text-green-600">
                                             {{ $orderItem->order->order_number }}
                                         </a>
                                         <p class="text-xs text-gray-500">Customer: {{ $orderItem->order->customer->name }}
@@ -147,7 +147,7 @@
                                 View Orders
                             </a>
                             <a href="{{ route('admin.sellers.analytics', $seller) }}"
-                                class="block w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center">
+                                class="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-center">
                                 View Analytics
                             </a>
                         </div>
@@ -158,7 +158,7 @@
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-lg font-semibold text-gray-800">Recent Products</h3>
                             <a href="{{ route('admin.sellers.products', $seller) }}"
-                                class="text-sm text-blue-600 hover:text-blue-700">
+                                class="text-sm text-green-600 hover:text-green-700">
                                 View All
                             </a>
                         </div>
@@ -173,7 +173,7 @@
                                     @endif
                                     <div class="flex-1">
                                         <a href="{{ route('admin.products.show', $product) }}"
-                                            class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                            class="text-sm font-medium text-gray-900 hover:text-green-600">
                                             {{ $product->name }}
                                         </a>
                                         <div class="flex items-center justify-between mt-1">

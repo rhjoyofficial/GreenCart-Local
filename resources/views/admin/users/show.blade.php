@@ -15,7 +15,7 @@
                             class="w-16 h-16 rounded-full flex items-center justify-center text-xl font-semibold
                         @if ($user->hasRole('admin')) bg-red-100 text-red-600
                         @elseif($user->hasRole('seller')) bg-green-100 text-green-600
-                        @else bg-blue-100 text-blue-600 @endif">
+                        @else bg-green-100 text-green-600 @endif">
                             {{ strtoupper(substr($user->name, 0, 1)) }}
                         </div>
                         <div>
@@ -25,7 +25,7 @@
                                     class="px-2 py-1 rounded-full text-xs font-medium 
                                 @if ($user->hasRole('admin')) bg-red-100 text-red-800
                                 @elseif($user->hasRole('seller')) bg-green-100 text-green-800
-                                @else bg-blue-100 text-blue-800 @endif">
+                                @else bg-green-100 text-blue-800 @endif">
                                     {{ $user->role->name }}
                                 </span>
                                 <span
@@ -37,7 +37,7 @@
                     </div>
                     <div class="flex space-x-3">
                         <a href="{{ route('admin.users.edit', $user) }}"
-                            class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                            class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
                             Edit User
                         </a>
                         @if ($user->id !== auth()->id())
@@ -188,7 +188,7 @@
                                 </button>
                             </form>
                             <a href="{{ route('admin.users.edit', $user) }}"
-                                class="block w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-center">
+                                class="block w-full px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-center">
                                 Edit User
                             </a>
                             @if ($user->hasRole('seller'))

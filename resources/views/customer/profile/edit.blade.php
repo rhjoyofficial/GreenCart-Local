@@ -22,15 +22,15 @@
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-4">Profile Picture</label>
                         <div class="flex items-center">
-                            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mr-6">
-                                <span class="text-blue-600 font-semibold text-2xl">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mr-6">
+                                <span class="text-green-600 font-semibold text-2xl">
                                     {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                                 </span>
                             </div>
                             <div>
                                 <input type="file" id="avatar" name="avatar" class="hidden" accept="image/*">
                                 <label for="avatar"
-                                    class="cursor-pointer bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+                                    class="cursor-pointer bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors inline-block">
                                     Change Photo
                                 </label>
                                 <p class="text-sm text-gray-500 mt-2">JPG, PNG, or GIF (Max: 2MB)</p>
@@ -47,7 +47,7 @@
                             </label>
                             <input type="text" id="name" name="name"
                                 value="{{ old('name', auth()->user()->name) }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 required>
                             @error('name')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -61,7 +61,7 @@
                             </label>
                             <input type="email" id="email" name="email"
                                 value="{{ old('email', auth()->user()->email) }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 required>
                             @error('email')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -75,7 +75,7 @@
                             </label>
                             <input type="tel" id="phone" name="phone"
                                 value="{{ old('phone', auth()->user()->phone) }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             @error('phone')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -87,7 +87,7 @@
                                 Date of Birth
                             </label>
                             <input type="date" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth') }}"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@
                                 </label>
                                 <input type="text" id="address_line1" name="address_line1"
                                     value="{{ old('address_line1', auth()->user()->address_line1) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             </div>
 
                             <!-- Address Line 2 -->
@@ -112,7 +112,7 @@
                                 </label>
                                 <input type="text" id="address_line2" name="address_line2"
                                     value="{{ old('address_line2', auth()->user()->address_line2) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             </div>
 
                             <!-- City -->
@@ -122,7 +122,7 @@
                                 </label>
                                 <input type="text" id="city" name="city"
                                     value="{{ old('city', auth()->user()->city) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             </div>
 
                             <!-- State -->
@@ -132,7 +132,7 @@
                                 </label>
                                 <input type="text" id="state" name="state"
                                     value="{{ old('state', auth()->user()->state) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             </div>
 
                             <!-- Postal Code -->
@@ -142,7 +142,7 @@
                                 </label>
                                 <input type="text" id="postal_code" name="postal_code"
                                     value="{{ old('postal_code', auth()->user()->postal_code) }}"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                             </div>
 
                             <!-- Country -->
@@ -151,7 +151,7 @@
                                     Country
                                 </label>
                                 <select id="country" name="country"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                                     <option value="">Select Country</option>
                                     <option value="Bangladesh"
                                         {{ old('country', auth()->user()->country) == 'Bangladesh' ? 'selected' : '' }}>
@@ -176,7 +176,7 @@
                                 Reset
                             </button>
                             <button type="submit"
-                                class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                                class="bg-green-600 text-white px-8 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
                                 Save Changes
                             </button>
                         </div>
@@ -204,7 +204,7 @@
                                 Current Password *
                             </label>
                             <input type="password" id="current_password" name="current_password"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 required>
                             @error('current_password')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -217,7 +217,7 @@
                                 New Password *
                             </label>
                             <input type="password" id="password" name="password"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                                 required>
                             @error('password')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -231,7 +231,7 @@
                             Confirm New Password *
                         </label>
                         <input type="password" id="password_confirmation" name="password_confirmation"
-                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
                             required>
                     </div>
 
@@ -303,21 +303,23 @@
                                     <span class="font-medium text-gray-900">Order Updates</span>
                                     <p class="text-sm text-gray-600">Receive updates about your orders</p>
                                 </div>
-                                <input type="checkbox" checked class="h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                                <input type="checkbox" checked
+                                    class="h-5 w-5 text-green-600 rounded focus:ring-green-500">
                             </label>
                             <label class="flex items-center justify-between">
                                 <div>
                                     <span class="font-medium text-gray-900">Promotional Emails</span>
                                     <p class="text-sm text-gray-600">Receive special offers and promotions</p>
                                 </div>
-                                <input type="checkbox" checked class="h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                                <input type="checkbox" checked
+                                    class="h-5 w-5 text-green-600 rounded focus:ring-green-500">
                             </label>
                             <label class="flex items-center justify-between">
                                 <div>
                                     <span class="font-medium text-gray-900">Product Recommendations</span>
                                     <p class="text-sm text-gray-600">Personalized product suggestions</p>
                                 </div>
-                                <input type="checkbox" class="h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                                <input type="checkbox" class="h-5 w-5 text-green-600 rounded focus:ring-green-500">
                             </label>
                         </div>
                     </div>
@@ -331,14 +333,15 @@
                                     <span class="font-medium text-gray-900">Public Profile</span>
                                     <p class="text-sm text-gray-600">Allow others to see your profile</p>
                                 </div>
-                                <input type="checkbox" class="h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                                <input type="checkbox" class="h-5 w-5 text-green-600 rounded focus:ring-green-500">
                             </label>
                             <label class="flex items-center justify-between">
                                 <div>
                                     <span class="font-medium text-gray-900">Show Purchase History</span>
                                     <p class="text-sm text-gray-600">Display your purchase history on profile</p>
                                 </div>
-                                <input type="checkbox" checked class="h-5 w-5 text-blue-600 rounded focus:ring-blue-500">
+                                <input type="checkbox" checked
+                                    class="h-5 w-5 text-green-600 rounded focus:ring-green-500">
                             </label>
                         </div>
                     </div>
@@ -346,7 +349,7 @@
                     <!-- Save Preferences -->
                     <div class="flex justify-end pt-6 border-t border-gray-200">
                         <button type="submit"
-                            class="bg-blue-600 text-white px-8 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                            class="bg-green-600 text-white px-8 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium">
                             Save Preferences
                         </button>
                     </div>

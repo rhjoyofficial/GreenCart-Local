@@ -8,7 +8,7 @@
                         @if ($type == 'success') bg-green-50 border-green-500 text-green-800
                         @elseif($type == 'error') bg-red-50 border-red-500 text-red-800
                         @elseif($type == 'warning') bg-yellow-50 border-yellow-500 text-yellow-800
-                        @else bg-blue-50 border-blue-500 text-blue-800 @endif">
+                        @else bg-green-50 border-green-500 text-blue-800 @endif">
                         <div class="flex items-center space-x-3">
                             @if ($type == 'success')
                                 <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor"
@@ -30,7 +30,7 @@
                                     </path>
                                 </svg>
                             @else
-                                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>

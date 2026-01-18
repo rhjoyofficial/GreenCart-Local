@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Privacy Policy - Marketplace')
+@section('title', 'Privacy Policy - GreenCart-Local')
 
 @section('content')
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -16,7 +16,7 @@
                 <section class="mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
                     <p class="text-gray-700 mb-4">
-                        At Marketplace, we are committed to protecting your privacy. This Privacy Policy explains how we
+                        At GreenCart-Local, we are committed to protecting your privacy. This Privacy Policy explains how we
                         collect, use, disclose, and safeguard your information when you use our platform.
                     </p>
                     <p class="text-gray-700">

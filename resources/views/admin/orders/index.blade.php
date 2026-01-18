@@ -12,7 +12,7 @@
                 <div class="md:col-span-2">
                     <div class="relative">
                         <input type="text" placeholder="Search orders..."
-                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                            class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -24,7 +24,7 @@
                 <!-- Status Filter -->
                 <div>
                     <select
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="">All Status</option>
                         <option value="pending">Pending</option>
                         <option value="processing">Processing</option>
@@ -37,7 +37,7 @@
                 <!-- Date Filter -->
                 <div>
                     <input type="date"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4">
                                     <a href="{{ route('admin.orders.show', $order) }}"
-                                        class="text-blue-600 hover:text-blue-700 font-medium">
+                                        class="text-green-600 hover:text-green-700 font-medium">
                                         {{ $order->order_number }}
                                     </a>
                                 </td>
@@ -87,7 +87,7 @@
                                     <span
                                         class="px-2 py-1 rounded-full text-xs font-medium 
                                     @if ($order->status === 'pending') bg-yellow-100 text-yellow-800
-                                    @elseif($order->status === 'processing') bg-blue-100 text-blue-800
+                                    @elseif($order->status === 'processing') bg-green-100 text-blue-800
                                     @elseif($order->status === 'shipped') bg-purple-100 text-purple-800
                                     @elseif($order->status === 'delivered') bg-green-100 text-green-800
                                     @else bg-red-100 text-red-800 @endif">
@@ -106,7 +106,7 @@
                                 <td class="px-6 py-4 text-sm font-medium">
                                     <div class="flex space-x-2">
                                         <a href="{{ route('admin.orders.show', $order) }}"
-                                            class="text-blue-600 hover:text-blue-700">
+                                            class="text-green-600 hover:text-green-700">
                                             View
                                         </a>
                                         <a href="{{ route('admin.orders.invoice', $order) }}"

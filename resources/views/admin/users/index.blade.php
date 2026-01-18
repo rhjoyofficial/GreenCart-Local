@@ -12,7 +12,7 @@
                 <p class="text-sm text-gray-600">Manage admin, seller, and customer accounts</p>
             </div>
             <a href="{{ route('admin.users.create') }}"
-                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center space-x-2">
+                class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center space-x-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                 </svg>
@@ -29,14 +29,14 @@
                     <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
                     <input type="text" name="search" placeholder="Search by name, email, phone..."
                         value="{{ request('search') }}"
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 </div>
 
                 <!-- Role Filter -->
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Role</label>
                     <select name="role_id"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="all" {{ request('role_id') == 'all' ? 'selected' : '' }}>All Roles</option>
                         @foreach ($roles as $role)
                             <option value="{{ $role->id }}" {{ request('role_id') == $role->id ? 'selected' : '' }}>
@@ -50,7 +50,7 @@
                 <div class="md:w-1/3">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
                     <select name="is_active"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                         <option value="all" {{ request('is_active') == 'all' ? 'selected' : '' }}>All Status</option>
                         <option value="active" {{ request('is_active') == 'active' ? 'selected' : '' }}>Active</option>
                         <option value="inactive" {{ request('is_active') == 'inactive' ? 'selected' : '' }}>Inactive
@@ -60,7 +60,7 @@
 
                 <!-- Buttons -->
                 <div class="md:w-1/3 flex items-end space-x-2">
-                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex-1">
+                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 flex-1">
                         Filter
                     </button>
                     <a href="{{ route('admin.users.index') }}"
@@ -100,12 +100,12 @@
                                             class="w-10 h-10 rounded-full flex items-center justify-center 
                                     @if ($user->hasRole('admin')) bg-red-100 text-red-600
                                     @elseif($user->hasRole('seller')) bg-green-100 text-green-600
-                                    @else bg-blue-100 text-blue-600 @endif">
+                                    @else bg-green-100 text-green-600 @endif">
                                             {{ strtoupper(substr($user->name, 0, 1)) }}
                                         </div>
                                         <div>
                                             <a href="{{ route('admin.users.show', $user) }}"
-                                                class="text-sm font-medium text-gray-900 hover:text-blue-600">
+                                                class="text-sm font-medium text-gray-900 hover:text-green-600">
                                                 {{ $user->name }}
                                             </a>
                                             <div class="text-xs text-gray-500">{{ $user->email }}</div>
@@ -117,7 +117,7 @@
                                         class="px-2 py-1 rounded-full text-xs font-medium 
                                 @if ($user->hasRole('admin')) bg-red-100 text-red-800
                                 @elseif($user->hasRole('seller')) bg-green-100 text-green-800
-                                @else bg-blue-100 text-blue-800 @endif">
+                                @else bg-green-100 text-blue-800 @endif">
                                         {{ $user->role->name }}
                                     </span>
                                     @if ($user->business_name)
@@ -144,7 +144,7 @@
                                 <td class="px-6 py-4 text-sm font-medium">
                                     <div class="flex space-x-3">
                                         <a href="{{ route('admin.users.show', $user) }}"
-                                            class="text-blue-600 hover:text-blue-700">View</a>
+                                            class="text-green-600 hover:text-green-700">View</a>
                                         <a href="{{ route('admin.users.edit', $user) }}"
                                             class="text-green-600 hover:text-green-700">Edit</a>
                                         @if ($user->id !== auth()->id())

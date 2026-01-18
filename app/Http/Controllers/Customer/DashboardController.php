@@ -31,9 +31,9 @@ class DashboardController extends Controller
         ];
 
         // Wishlist items
-        $wishlistItems = $user->defaultWishlist
-            ? $user->defaultWishlist->products()->limit(4)->get()
-            : collect();
+        // $wishlistItems = $user->defaultWishlist
+        //     ? $user->defaultWishlist->products()->limit(4)->get()
+        //     : collect();
 
         // Recent activity (could be expanded)
         $recentActivity = [
@@ -45,7 +45,7 @@ class DashboardController extends Controller
         return view('customer.dashboard.index', compact(
             'recentOrders',
             'orderStats',
-            'wishlistItems',
+            // 'wishlistItems',
             'recentActivity'
         ));
     }

@@ -55,7 +55,7 @@
                             <div class="relative">
                                 <button id="user-menu-button" class="flex items-center space-x-2 focus:outline-none">
                                     <div
-                                        class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                        class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold">
                                         {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                                     </div>
                                     <span class="hidden md:inline text-sm font-medium text-gray-700">

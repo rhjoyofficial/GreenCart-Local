@@ -1,20 +1,20 @@
 @extends('layouts.frontend')
 
-@section('title', 'Frequently Asked Questions - Marketplace')
+@section('title', 'Frequently Asked Questions - GreenCart-Local')
 
 @section('content')
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Header -->
         <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h1>
-            <p class="text-xl text-gray-600">Find answers to common questions about shopping on Marketplace</p>
+            <p class="text-xl text-gray-600">Find answers to common questions about shopping on GreenCart-Local</p>
         </div>
 
         <!-- Search FAQ -->
         <div class="mb-12">
             <div class="relative max-w-2xl mx-auto">
                 <input type="text" placeholder="Search for answers..."
-                    class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none">
+                    class="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none">
                 <svg class="absolute left-4 top-4 w-6 h-6 text-gray-400" fill="none" stroke="currentColor"
                     viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -26,7 +26,7 @@
         <!-- FAQ Categories -->
         <div class="mb-12">
             <div class="flex flex-wrap justify-center gap-4">
-                <button class="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium">
+                <button class="px-6 py-2 bg-green-600 text-white rounded-lg font-medium">
                     All Questions
                 </button>
                 <button class="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
@@ -247,16 +247,16 @@
         </div>
 
         <!-- Still Have Questions -->
-        <div class="mt-12 bg-blue-50 border border-blue-200 rounded-2xl p-8 text-center">
+        <div class="mt-12 bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
             <h3 class="text-2xl font-bold text-blue-900 mb-4">Still have questions?</h3>
-            <p class="text-blue-700 mb-6">Can't find the answer you're looking for? Our support team is here to help.</p>
+            <p class="text-green-700 mb-6">Can't find the answer you're looking for? Our support team is here to help.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ route('contact') }}"
-                    class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium">
                     Contact Support
                 </a>
                 <a href="tel:+8801234567890"
-                    class="bg-white border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-medium">
+                    class="bg-white border border-green-600 text-green-600 px-8 py-3 rounded-lg hover:bg-green-50 transition-colors font-medium">
                     Call Now: +880 1234 567890
                 </a>
             </div>
