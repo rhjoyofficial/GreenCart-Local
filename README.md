@@ -160,26 +160,6 @@ resources/
  └── js
 ```
 
----
-
-## 📦 Submission Instructions (Academic)
-
-* ✅ Project Report (PDF/DOC)
-* ✅ Video Demonstration (5 minutes)
-* ✅ Full Source Code (exclude `node_modules`, `build`)
-* ✅ README.md (this file)
-
----
-
-## 📈 Future Improvements
-
-* Online payment gateway integration
-* REST API for mobile apps
-* Real-time notifications
-* Advanced analytics & recommendations
-
----
-
 ## 👤 Author
 
 **Rakibul Hasan Joy**
