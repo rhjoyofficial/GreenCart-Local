@@ -96,8 +96,8 @@ The platform allows administrators to manage the entire system, sellers to manag
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/ecommerce-multivendor.git
-cd ecommerce-multivendor
+git clone https://github.com/rhjoyofficial/GreenCart-Local.git
+cd GreenCart-Local
 ````
 
 ### 2️⃣ Install Dependencies
